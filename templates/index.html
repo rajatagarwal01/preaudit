@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>App &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet"  href="{{url_for('static',filename='css/bootstrap.css')}}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href= "{{url_for('static',filename='css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename= 'css/owl.theme.default.min.css')}}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+
+
+
+<h2 class="animated fadeIn wow" data-wow-delay="0.4s"  style="text-align:center;" >RISK LEVEL PREDICTOR FOR SUSPICIOUS FIRMS BEFORE AUDIT</h2>
+
+
+
+
+
+<div  id="page-wrap" style="background-image: url({{ url_for('static', filename='img/imfin.jpg') }})">
+
+
+
+	<!-- ==========================================================================================================
+													   HERO
+		 ========================================================================================================== -->
+
+	<div id="fh5co-hero-wrapper">
+		<nav class="container navbar navbar-expand-lg main-navbar-nav navbar-light">
+	
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+
+		</nav>
+
+		<div class="container fh5co-hero-inner">
+			
+
+
+
+<p class="about-text">
+
+   
+
+          <h5 class="header col s12 light">Denotations :-</h5>
+         <h6 class="header col s12 light"> Sector Score : Historical risk score value of the
+target-unit .</h6>
+          <h6 class="header col s12 light">Parameter A : Discrepancy found in the planned expenditure of inspection and summary
+report in Rs (crore).</h6>
+          <h6 class="header col s12 light">Parameter B : Discrepancy found in the unplanned expenditure of inspection and summary
+report  in Rs (crore).</h6>
+          
+          <h6 class="header col s12 light"> Total : Total amount of discrepancy found in other
+reports in Rs (crore).</h6>
+          <h6 class="header col s12 light"> Money Value : Amount of money involved in misstatements
+in the past audits.</h6>
+
+
+          <h5 class="header col s12 light">Note:-</h5>
+          <h6 class="header col s12 light"> A risk score below 2.5 means the company is not suspicious</h6>
+          <h6 class="header col s12 light"> A risk score between 2.5 and 4 means the company is moderately suspicious</h6>
+          <h6 class="header col s12 light"> A risk score above 4 means the company is very suspicious</h6>
+          
+
+          
+          </p>
+
+
+
+
+
+
+<!-- Main Input For Receiving Query to our ML -->
+
+
+  
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" min = "0" step="0.01" name="Sector_score" placeholder="Sector score" required="required" />
+        <input type="number" min = "0" step="0.01" name="PARA_A" placeholder="Parameter A" required="required" />
+		<input type="number" min = "0" step="0.01" name="PARA_B" placeholder="Parameter B" required="required" />
+        <input type="number" min = "0" step="0.01" name="TOTAL" placeholder="Total" required="required" />
+	    <input type="number" min = "0" step="0.01" name="Money_Value" placeholder="Money Value" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+
+
+   <br>
+   <br>
+
+
+   {{ prediction_text }}
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		</div>
+
+
+	</div> <!-- first section wrapper -->
+
+
+	
+
+
+
+	<!-- ==========================================================================================================
+                                               SECTION 7 - SUB FOOTER
+    ========================================================================================================== -->
+
+	<footer class="footer-outer">
+
+
+
+
+		<div class="container footer-inner" >
+
+
+
+		
+		</div>
+
+		<span class="border-bottom-footer"></span>
+   
+      </div>
+    </div>
+
+
+
+		</div>
+	</footer>
+
+</div> <!-- main page wrapper -->
+	
+	<script src="{{ url_for('static', filename= 'js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/bootstrap.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/owl.carousel.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/wow.min.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+
+
+</body>
+</html>
